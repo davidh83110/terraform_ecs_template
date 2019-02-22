@@ -7,35 +7,35 @@
 ### Structure
 
 ```
-├── ec2
-│   ├── ec2.tf
-│   ├── scripts
-│   │   └── init.cfg
-│   └── vars.tf
-|
-├── ecs_cluster
-│   ├── cluster.tf
-│   ├── output.tf
-│   └── vars.tf
-|
-├── ecs_service
-│   ├── service.tf
-│   └── vars.tf
-|
-├── lb_http
-│   ├── lb.tf
-│   ├── output.tf
-│   └── vars.tf
-|
-├── lb_https
-│   ├── listener_https.tf
-│   ├── output.tf
-│   └── vars.tf
-|
-└── vpc
-    ├── output.tf
-    ├── vars.tf
-    └── vpc.tf
+|-- README.md
+|-- ec2
+|   |-- ec2.tf
+|   |-- scripts
+|   |   `-- init.cfg
+|   `-- vars.tf
+|-- ecs_cluster
+|   |-- cluster.tf
+|   |-- output.tf
+|   `-- vars.tf
+|-- ecs_service
+|   |-- service.tf
+|   `-- vars.tf
+|-- lb_http
+|   |-- lb.tf
+|   |-- output.tf
+|   `-- vars.tf
+|-- lb_https
+|   |-- listener_https.tf
+|   |-- output.tf
+|   `-- vars.tf
+|-- subnets
+|   |-- outpur.tf
+|   |-- subnets.tf
+|   `-- vars.tf
+|-- vpc
+|   |-- output.tf
+|   |-- vars.tf
+|-- `-- vpc.tf
 
 ```
 
