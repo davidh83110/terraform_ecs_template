@@ -1,4 +1,4 @@
-resource "aws_lb_listener" "sso-https" {
+resource "aws_lb_listener" "https" {
   load_balancer_arn = "${var.alb_http_id}"
   port              = "443"
   protocol          = "HTTPS"
@@ -10,7 +10,7 @@ resource "aws_lb_listener" "sso-https" {
   }
 }
 
-resource "aws_alb_listener" "sso_http" {
+resource "aws_alb_listener" "http" {
   load_balancer_arn = "${var.alb_http_id}"
   port              = "80"
   protocol          = "HTTP"

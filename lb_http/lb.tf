@@ -1,8 +1,8 @@
-resource "aws_alb_target_group" "auth" {
-  name     = "ALB-${var.service_name}"
-  port     = "${var.alb_port}"
-  protocol = "HTTP"
-  vpc_id = "${var.vpc}"
+resource "aws_alb_target_group" "main" {
+  name                 = "ALB-${var.service_name}"
+  port                 = "${var.alb_port}"
+  protocol             = "HTTP"
+  vpc_id               = "${var.vpc}"
   deregistration_delay = "${var.alb_deregistration_delay}"
 
   health_check = {
@@ -14,7 +14,7 @@ resource "aws_alb_target_group" "auth" {
   }
 }
 
-resource "aws_alb" "auth" {
+resource "aws_alb" "main" {
   name                             = "ALB-${var.service_name}"
   subnets                          = ["${count.index % 2 == 0 ? var.alb_subnet_a : var.alb_subnet_b}"]
   security_groups                  = ["${var.alb_sg_id}"]
