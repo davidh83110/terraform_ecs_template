@@ -36,7 +36,7 @@ resource "aws_ecs_service" "main" {
   cluster                            = "${var.ecs_cluster_id}"
   desired_count                      = "${var.ecs_desired_count}"
   iam_role                           = "ecsServiceRole"
-  task_definition                    = "${aws_ecs_task_definition.main.family}:${aws_ecs_task_definition.main.revision}"
+  task_definition                    = "${var.ecs_task_definition}"
   deployment_minimum_healthy_percent = "${var.ecs_minimum_healthy_percent}"
   deployment_maximum_percent         = "${var.ecs_maximum_healthy_percent}"
   health_check_grace_period_seconds  = "${var.ecs_health_check_grace_period_seconds}"
