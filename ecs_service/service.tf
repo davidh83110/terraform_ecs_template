@@ -1,36 +1,3 @@
-resource "aws_ecs_task_definition" "main" {
-  family = "${var.ecs_service_name}"
-
-  container_definitions = <<DEFINITION
-[
-  {
-    "portMappings": [
-      {
-        "hostPort": 0,
-        "protocol": "tcp",
-        "containerPort": ${var.alb_container_port}
-      }
-    ],
-    "cpu": 0,
-    "environment": [
-      {
-        "name": "RAILS_ENV",
-        "value": "production"
-      },
-      {
-        "name": "UNICORN_WORKERS",
-        "value": "4"
-      }
-    ],
-    "memoryReservation": 512,
-    "image": "${var.ecs_unicorn_container_image}",
-    "essential": true,
-    "name": "${var.ecs_service_name}"
-  }
-]
-DEFINITION
-}
-
 resource "aws_ecs_service" "main" {
   name                               = "${var.ecs_service_name}"
   cluster                            = "${var.ecs_cluster_id}"

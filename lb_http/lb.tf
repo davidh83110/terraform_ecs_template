@@ -16,7 +16,7 @@ resource "aws_alb_target_group" "main" {
 
 resource "aws_alb" "main" {
   name                             = "ALB-${var.service_name}"
-  subnets                          = ["${count.index % 2 == 0 ? var.alb_subnet_a : var.alb_subnet_b}"]
+  subnets                          = ["${var.alb_subnet_a}", "${var.alb_subnet_b}"]
   security_groups                  = ["${var.alb_sg_id}"]
   enable_cross_zone_load_balancing = false
   enable_http2                     = false
