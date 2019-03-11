@@ -1,5 +1,3 @@
-variable "ecs_project_name" {}
-
 variable "ecs_service_name" {}
 
 variable "ecs_cluster_id" {}
@@ -7,8 +5,6 @@ variable "ecs_cluster_id" {}
 variable "ecs_task_definition" {}
 
 variable "alb_container_port" {}
-
-variable "ecs_unicorn_container_image" {}
 
 variable "ecs_desired_count" {}
 
