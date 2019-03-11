@@ -8,14 +8,8 @@ resource "aws_ecs_service" "main" {
   deployment_maximum_percent         = "${var.ecs_maximum_healthy_percent}"
   health_check_grace_period_seconds  = "${var.ecs_health_check_grace_period_seconds}"
 
-  placement_strategy {
+  order_placement_strategy {
     type  = "${var.ecs_placement_strategy_type}"
     field = "${var.ecs_placement_strategy_field}"
-  }
-
-  load_balancer {
-    target_group_arn = "${var.alb_target_group_id}"
-    container_name   = "${var.ecs_service_name}"
-    container_port   = "${var.alb_container_port}"
   }
 }
