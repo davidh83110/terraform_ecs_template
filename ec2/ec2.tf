@@ -30,7 +30,7 @@ data "aws_security_group" "default" {
 
 resource "aws_instance" "ecs" {
   ami                         = "${data.aws_ami.amazon.id}"
-  iam_instance_profile        = "ecsInstanceRole"
+  iam_instance_profile        = "${var.ec2_role}"
   instance_type               = "${var.ec2_type}"
   key_name                    = "${var.ec2_key_pair}"
   subnet_id                   = "${var.ec2_subnet_id}"
