@@ -16,7 +16,7 @@ data "aws_ami" "amazon" {
 }
 
 data "template_file" "script" {
-  template = "${file("./scripts/init.cfg")}"
+  template = "${file("ec2/scripts/init.cfg")}"
 
   vars {
     project_name = "${var.ec2_project_name}"
