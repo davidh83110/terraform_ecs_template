@@ -9,3 +9,7 @@ output "alb_http_id" {
 output "alb_http_zone_id" {
   value = "${aws_alb.main.zone_id}"
 }
+
+output "alb_http_dns_name" {
+  value = "${aws_alb.main.dns_name}"
+}
