@@ -33,7 +33,7 @@ resource "aws_instance" "ecs" {
   iam_instance_profile        = "${var.ec2_role}"
   instance_type               = "${var.ec2_type}"
   key_name                    = "${var.ec2_key_pair}"
-  subnet_id                   = "${var.ec2_subnet_id}"
+  subnet_id                   = "${count.index % 2 == 0 ? var.ec2_subnet_id_a : var.ec2_subnet_id_b}"
   vpc_security_group_ids      = ["${data.aws_security_group.default.id}"]
   user_data                   = "${data.template_file.script.rendered}"
   ebs_optimized               = true

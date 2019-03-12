@@ -10,6 +10,8 @@ variable "ec2_disk_size" {}
 
 variable "ec2_count" {}
 
-variable "ec2_subnet_id" {}
+variable "ec2_subnet_id_a" {}
+
+variable "ec2_subnet_id_b" {}
 
 variable "ec2_role" {}
