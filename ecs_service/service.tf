@@ -8,7 +8,7 @@ resource "aws_ecs_service" "main" {
   deployment_maximum_percent         = "${var.ecs_maximum_healthy_percent}"
   health_check_grace_period_seconds  = "${var.ecs_health_check_grace_period_seconds}"
 
-  order_placement_strategy {
+  ordered_placement_strategy {
     type  = "${var.ecs_placement_strategy_type}"
     field = "${var.ecs_placement_strategy_field}"
   }
