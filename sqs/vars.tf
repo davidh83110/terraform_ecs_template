@@ -19,3 +19,5 @@ variable "sqs_MESSAGE_RETENTION_SECONDS" {
 variable "sqs_RECEIVE_WAIT_TIME_SECONDS" {
   default = "0"
 }
+
+variable "sqs_redrive_policy" {}

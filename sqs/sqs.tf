@@ -5,6 +5,7 @@ resource "aws_sqs_queue" "sqs" {
   delay_seconds              = "${var.sqs_DELAY_SECONDS}"
   message_retention_seconds  = "${var.sqs_MESSAGE_RETENTION_SECONDS}"
   receive_wait_time_seconds  = "${var.sqs_RECEIVE_WAIT_TIME_SECONDS}"
+  redrive_policy             = "${var.sqs_redrive_policy}"
 }
 
 resource "aws_sqs_queue_policy" "sqs-policy" {
