@@ -1,11 +1,7 @@
 # EC2
 data "aws_ami" "amazon" {
   most_recent = true
-
-  filter {
-    name   = "owner-alias"
-    values = ["amazon"]
-  }
+  owners      = ["amazon"]
 
   name_regex = "^amzn-ami-.*-amazon-ecs-optimized$"
 
