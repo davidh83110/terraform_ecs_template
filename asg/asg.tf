@@ -21,7 +21,7 @@ data "template_file" "script" {
   template = "${file("${path.module}/../ec2/scripts/init.cfg")}"
 
   vars {
-    project_name = "${var.ec2_project_name}"
+    project_name = "${var.asg_project_name}"
   }
 }
 

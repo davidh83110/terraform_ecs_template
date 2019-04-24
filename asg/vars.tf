@@ -1,3 +1,5 @@
+variable "vpc" {}
+
 variable "asg_project_name" {}
 
 variable "asg_instance_type" {}
