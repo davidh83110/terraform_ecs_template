@@ -27,7 +27,7 @@ data "template_file" "script" {
 
 resource "aws_launch_configuration" "asg" {
   name_prefix          = "${var.asg_project_name}-asg-configuration"
-  image_id             = "${var.aws_ami.amazon.id}"
+  image_id             = "${data.aws_ami.amazon.id}"
   instance_type        = "${var.asg_instance_type}"
   enable_monitoring    = false
   key_name             = "${var.asg_ec2_key}"
