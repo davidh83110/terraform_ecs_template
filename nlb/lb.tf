@@ -1,4 +1,4 @@
-resource "aws_nlb_target_group" "main" {
+resource "aws_lb_target_group" "main" {
   name                 = "NLB-${var.service_name}"
   port                 = "${var.nlb_port}"
   protocol             = "HTTP"

@@ -1,5 +1,5 @@
 output "nlb_tg_id" {
-  value = "${aws_nlb_target_group.main.id}"
+  value = "${aws_lb_target_group.main.id}"
 }
 
 output "nlb_http_id" {
