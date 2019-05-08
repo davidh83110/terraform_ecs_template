@@ -21,3 +21,5 @@ variable "nlb_subnet_a" {}
 variable "nlb_subnet_b" {}
 
 variable "nlb_internal" {}
+
+variable "nlb_protocol" {}

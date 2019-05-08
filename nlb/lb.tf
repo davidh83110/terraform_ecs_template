@@ -1,7 +1,7 @@
 resource "aws_lb_target_group" "main" {
   name                 = "NLB-${var.service_name}"
   port                 = "${var.nlb_port}"
-  protocol             = "HTTP"
+  protocol             = "${var.nlb_protocol}"
   vpc_id               = "${var.vpc}"
   deregistration_delay = "${var.nlb_deregistration_delay}"
 
