@@ -7,11 +7,7 @@ resource "aws_lb_target_group" "main" {
   stickiness           = []
 
   health_check = {
-    path                = "${var.nlb_health_check_page}"
-    timeout             = "${var.nlb_health_check_timeout}"
-    interval            = "${var.nlb_health_check_interval}"
     healthy_threshold   = "${var.nlb_health_check_healthy_threshold}"
-    unhealthy_threshold = "${var.nlb_health_check_unhealthy_threshold}"
   }
 }
 
