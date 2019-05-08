@@ -6,7 +6,7 @@ variable "vpc" {}
 
 variable "nlb_deregistration_delay" {}
 
-variable "nlb_health_check_healthy_threshold" {}
+variable "nlb_health_check_threshold" {}
 
 variable "nlb_subnet_a" {}
 

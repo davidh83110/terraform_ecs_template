@@ -7,7 +7,8 @@ resource "aws_lb_target_group" "main" {
   stickiness           = []
 
   health_check = {
-    healthy_threshold   = "${var.nlb_health_check_healthy_threshold}"
+    healthy_threshold   = "${var.nlb_health_check_threshold}"
+    unhealthy_threshold = "${var.nlb_health_check_threshold}"
   }
 }
 
