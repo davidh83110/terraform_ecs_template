@@ -18,7 +18,6 @@ resource "aws_lb" "main" {
   name                             = "NLB-${var.service_name}"
   load_balancer_type               = "network"
   subnets                          = ["${var.nlb_subnet_a}", "${var.nlb_subnet_b}"]
-  security_groups                  = ["${var.nlb_sg_id}"]
   enable_cross_zone_load_balancing = false
   enable_http2                     = false
   internal                         = "${var.nlb_internal}"
