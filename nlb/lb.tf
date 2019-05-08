@@ -4,6 +4,7 @@ resource "aws_lb_target_group" "main" {
   protocol             = "${var.nlb_protocol}"
   vpc_id               = "${var.vpc}"
   deregistration_delay = "${var.nlb_deregistration_delay}"
+  stickiness           = []
 
   health_check = {
     path                = "${var.nlb_health_check_page}"
