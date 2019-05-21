@@ -11,4 +11,8 @@ resource "aws_ecs_service" "main" {
     type  = "${var.ecs_placement_strategy_type}"
     field = "${var.ecs_placement_strategy_field}"
   }
+
+  lifecycle {
+    ignore_changes = ["desired_count"]
+  }
 }

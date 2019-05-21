@@ -18,4 +18,8 @@ resource "aws_ecs_service" "main" {
     container_name   = "${var.ecs_service_name}"
     container_port   = "${var.alb_container_port}"
   }
+
+  lifecycle {
+    ignore_changes = ["desired_count"]
+  }
 }
