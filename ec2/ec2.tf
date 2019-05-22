@@ -44,4 +44,8 @@ resource "aws_instance" "ecs" {
   }
 
   count = "${var.ec2_count}"
+
+  lifecycle {
+    ignore_changes = ["ami"]
+  }
 }
