@@ -4,4 +4,8 @@ resource "aws_vpc" "vpc" {
   tags = {
     Name = "${var.vpc_name}"
   }
+
+  lifecycle {
+    ignore_changes = ["tags"]
+  }
 }
