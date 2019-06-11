@@ -23,3 +23,5 @@ variable "alb_subnet_b" {}
 variable "alb_sg_id" {}
 
 variable "alb_internal" {}
+
+variable "alb_enable_http2" {}

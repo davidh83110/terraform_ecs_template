@@ -19,6 +19,6 @@ resource "aws_alb" "main" {
   subnets                          = ["${var.alb_subnet_a}", "${var.alb_subnet_b}"]
   security_groups                  = ["${var.alb_sg_id}"]
   enable_cross_zone_load_balancing = false
-  enable_http2                     = false
+  enable_http2                     = "${var.alb_enable_http2}"
   internal                         = "${var.alb_internal}"
 }
