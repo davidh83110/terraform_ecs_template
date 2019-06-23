@@ -9,56 +9,73 @@
 ```
 .
 ├── README.md
-├── asg
-│   ├── asg.tf
-│   ├── output.tf
-│   └── vars.tf
-├── ec2
-│   ├── ec2.tf
-│   ├── scripts
-│   │   └── init.cfg
-│   └── vars.tf
-├── ecs_cluster
-│   ├── cluster.tf
-│   ├── output.tf
-│   └── vars.tf
-├── ecs_service
-│   ├── service.tf
-│   └── vars.tf
-├── ecs_service_nonLB
-│   ├── service.tf
-│   └── vars.tf
-├── lb_http
-│   ├── lb.tf
-│   ├── output.tf
-│   └── vars.tf
-├── lb_https
-│   ├── listener_https.tf
-│   ├── output.tf
-│   └── vars.tf
-├── listener_http
-│   ├── listener_http.tf
-│   ├── output.tf
-│   └── vars.tf
-├── route53_internal_shopline
-│   ├── route53.tf
-│   └── vars.tf
+├── ecs
+│   ├── alb
+│   │   ├── lb.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   ├── asg
+│   │   ├── asg.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   ├── ec2
+│   │   ├── ec2.tf
+│   │   ├── scripts
+│   │   │   └── init.cfg
+│   │   └── vars.tf
+│   ├── ecs_cluster
+│   │   ├── cluster.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   ├── ecs_service
+│   │   ├── service.tf
+│   │   └── vars.tf
+│   ├── ecs_service_nonLB
+│   │   ├── service.tf
+│   │   └── vars.tf
+│   ├── listener_http
+│   │   ├── listener_http.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   ├── listener_https
+│   │   ├── listener_https.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   └── nlb
+│       ├── lb.tf
+│       ├── output.tf
+│       └── vars.tf
+├── serverless
+│   ├── lambda
+│   │   ├── lambda.tf
+│   │   ├── output.tf
+│   │   └── vars.tf
+│   └── lambda-with-api-gateway
+│       ├── api-gateway.tf
+│       ├── common.tf
+│       ├── lambda.tf
+│       ├── output.tf
+│       └── vars.tf
 ├── sqs
-│   ├── output.tf
-│   ├── sqs.tf
-│   └── vars.tf
-├── subnets_app
-│   ├── output.tf
-│   ├── subnets_app.tf
-│   └── vars.tf
-├── subnets_public
-│   ├── output.tf
-│   ├── subnets_public.tf
-│   └── vars.tf
+│   ├── README.md
+│   └── sqs
+│       ├── output.tf
+│       ├── sqs.tf
+│       └── vars.tf
 └── vpc
-    ├── output.tf
-    ├── vars.tf
-    └── vpc.tf
+    ├── README.md
+    ├── subnets_app
+    │   ├── output.tf
+    │   ├── subnets_app.tf
+    │   └── vars.tf
+    ├── subnets_public
+    │   ├── output.tf
+    │   ├── subnets_public.tf
+    │   └── vars.tf
+    └── vpc
+        ├── output.tf
+        ├── vars.tf
+        └── vpc.tf
 
 
 ```
