@@ -31,7 +31,7 @@ resource "aws_launch_configuration" "asg" {
   instance_type        = "${var.asg_instance_type}"
   enable_monitoring    = false
   key_name             = "${var.asg_ec2_key}"
-  iam_instance_profile = "ecsInstanceRole"
+  iam_instance_profile = "${var.asg_instance_profile}"
   security_groups      = ["${data.aws_security_group.default.id}"]
   user_data            = "${data.template_file.script.rendered}"
 
@@ -41,6 +41,7 @@ resource "aws_launch_configuration" "asg" {
 
   lifecycle {
     create_before_destroy = true
+    ignore_changes = ["name_prefix", "image_id"]
   }
 }
 
@@ -60,5 +61,6 @@ resource "aws_autoscaling_group" "asg" {
 
   lifecycle {
     create_before_destroy = true
+    ignore_changes = ["min_size", "max_size"]
   }
 }

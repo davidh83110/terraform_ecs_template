@@ -13,3 +13,5 @@ variable "asg_subnet_id_b" {}
 variable "asg_min_size" {}
 
 variable "asg_max_size" {}
+
+variable "asg_instance_profile" {}
